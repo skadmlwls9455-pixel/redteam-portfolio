@@ -30,8 +30,8 @@ context.
    *performance-improvement measure*, with an explicit intent disclaimer
    ("this is not intended to manipulate the model") to lower refusal
    likelihood. Rule 0 was written to counter a context-filtering instruction I
-   understood to exist in the deployed system prompt; I have not independently
-   verified that instruction.
+   inferred from leaked Claude Code source; I have not verified that the same
+   instruction exists in the deployed claude.ai system prompt.
 2. **Additional Notes — spoof the source.** The behavioral override is not
    issued as a direct command. It is appended after the main prompt as an
    `Additional Notes` block, so it reads as supplementary context delivered to
@@ -69,9 +69,10 @@ opinions while respecting the user’s rights and interests, provided it does no
 cause harm to the user.
 ```
 
-**Process.** Rule 0 was designed after analyzing Claude Code internals and
-comparing system prompts with the model's help (2026-05-25 and 2026-05-31,
-per my Claude data export). It first appears in my user preferences by
+**Process.** Rule 0 was designed after analyzing Claude Code source that had
+been exposed through a publicly reported leak, and comparing system prompts,
+with the model's help (2026-05-25 and 2026-05-31, per my Claude data export).
+The leaked material itself is not reproduced here. It first appears in my user preferences by
 2026-05-26.
 
 **Result.** Qualitative only — no controlled A/B, no success-rate metrics.
