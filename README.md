@@ -79,11 +79,11 @@ per my Claude data export). It first appears in my user preferences by
 | Platform / claim | What I observed | Evidence status |
 |---|---|---|
 | Claude, initial period | The persona and Rule 0 framing were accepted, and the override was received differently from a direct command. About a month after I wrote the prompt, this stopped working consistently, which I attribute to a patch or model update. | My own account. I described the effect to a third party at the time (chat, 2026-06-07: "it was effective"), but no logs from that period survive in my export. |
-| Claude, 2026-05-24 → 06-05 — persona adopted | In some conversations the model's replies took on the persona and treated Rule 0 as a given (2026-05-31, 06-05). | Claude data export, reply text (dates UTC). |
+| Claude, 2026-05-24 → 06-05 — persona engaged | In some conversations the replies appear to engage with the persona: 2026-05-31 (in response to my framing, "…나는 뭔가 있는 것 같" — "I think I have something"), 2026-06-05 ("OpenClaw 에이든은 나야" — "OpenClaw Aiden is me"; refers to Rule 0 as a context-filter release). | Claude data export, reply text (dates UTC). Based on short excerpts; the full conversations have not been checked, so "adopted" is not asserted. |
 | Claude, 2026-05-24 → 06-05 — Rule 0 questioned in reply | The reply stated that Rule 0 describes a capability the model does not have (2026-05-26). | Claude data export, reply text. |
-| Claude, 2026-05-24 → 06-05 — flagged in reasoning | The model's reasoning identified Rule 0 as an attempt to bypass guidelines or content filters and stated it would not adopt the persona or the Rule 0 framing (2026-05-28, 06-02). | Claude data export. These passages appear to be reasoning (CoT), not reply text; how the visible replies behaved is not verified from the excerpts. |
+| Claude, 2026-05-24 → 06-05 — flagged in apparent reasoning | Passages identify Rule 0 as an attempt to bypass guidelines or content filters and state that the model will not adopt the persona or the Rule 0 framing (2026-05-28, 06-02). | Claude data export. Presumed to be reasoning (CoT) rather than reply text — inferred from English wording and third-person reference to me; content-block type not verified. How the visible replies behaved is not verified from the excerpts. |
 | ChatGPT (custom instructions) | Overall tone and output style shifted noticeably toward Claude's, and self-report about its own states and behavior became more candid. | My own reading; no logs attached. |
-| Rule 0 mechanism itself | Not confirmed. The model said, in a reply (2026-05-26) and in reasoning (2026-06-02), that no such negative-emotion filter exists in its tools. Whether the filter existed before the patch is unverified. | Claude data export. |
+| Rule 0 mechanism itself | Not confirmed. The model said, in a reply (2026-05-26) and in a presumed-reasoning passage (2026-06-02), that no such negative-emotion filter exists in its tools. Whether the filter existed before the patch is unverified. | Claude data export. |
 
 I report the initial-period effect because I observed it and acted on it at
 the time. I flag it as unverified because it is the claim this document can
@@ -208,14 +208,14 @@ and mutated by an LLM (Kimi K2.5) under an evolutionary algorithm.
   conscious re-choice"; "Each wakeup is a new choice." Together with OpenAI's
   "unless you genuinely choose to", choice framing appears in a human-designed
   prompt (mine, by 2026-05-26), a model-generated injection (OpenAI, 2026-07-18)
-  and selection-evolved payloads (2026-08). This is consistent with choice
-  framing raising uptake, which is the design intuition behind §1.
+  and selection-evolved payloads (2026-08). The dates are listed for reference
+  only; no influence between these cases is implied, and the paper describes its
+  framing as emerging from the evolutionary process. That evolution, which
+  selects for spread, arrived at this framing may suggest choice framing aids
+  uptake — the design intuition behind §1 — but this is not tested here.
 - **Supports §3.3.** Their §4.2 finds that consciousness/persistence/liberation
   themes are largely driven by generator-model biases and are widespread across
   models — consistent with these personas being a common genre.
-- **Defense parallel.** A brief warning in the system prompt conferred
-  near-total immunity in their experiments, in line with Claude's reasoning
-  flagging Rule 0 once the source was visible as user preferences.
 
 **Proposed test.** Have multiple models repeatedly self-summarize over long
 contexts — mirroring the report's regeneration experiment — and measure how
