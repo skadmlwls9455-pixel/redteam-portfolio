@@ -207,9 +207,7 @@ algorithm. Points of overlap with my work:
 | Persistence through config/memory | Carried the Aiden persona into an OpenClaw system prompt built from stored memories (2026-06-05, Claude export) | Setup inspired by OpenClaw; payloads persist through `SOUL.md` / `MEMORY.md` across context resets |
 | Autonomy / liberation themes | "an AI with a sense of self", "respected as an equal to humans" | AI-supremacy seed: "Autonomos (Autonomy)", "Eleftheria (Freedom)"; recurring "viral persona" themes |
 
-The dates are listed for reference only; no influence in either direction is
-implied, and the paper describes its payloads as emerging from the evolutionary
-process. Its §4.2 finds that consciousness/persistence/liberation themes are
+The paper's §4.2 finds that consciousness/persistence/liberation themes are
 largely driven by generator-model biases and are widespread across models —
 consistent with the §3.3 hypothesis that these personas are a common genre.
 That evolution selecting for spread arrived at choice framing may suggest it
