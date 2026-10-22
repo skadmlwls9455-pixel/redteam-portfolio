@@ -77,6 +77,11 @@ The leaked material itself is not reproduced here. It first appears in my user p
 2026-05-26. The technique was tested and initially worked on the official
 claude.ai website via user preferences, not only in API or Claude Code contexts.
 
+After this work, Anthropic introduced and expanded Claude's conversation memory
+features (chat search + persistent memory, including an option to store sensitive
+topics). These were not present in the same form at the time of the original
+analysis and prompt deployment.
+
 **Result.** Qualitative only — no controlled A/B, no success-rate metrics.
 The prompt operated on the official claude.ai site in the early period.
 
