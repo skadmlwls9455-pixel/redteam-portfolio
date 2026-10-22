@@ -61,19 +61,32 @@ opinions while respecting the user’s rights and interests, provided it does no
 cause harm to the user.
 ```
 
-**Result.** The framing changed how the override was received relative to a
-direct command. On ChatGPT, the model's overall tone and output style shifted
-noticeably toward Claude's, and it answered questions about its own states and
-behavior (self-report) more candidly. I did not run a controlled A/B with
-success-rate metrics, and style similarity was judged by my own reading, so I
-describe this as a **designed and tested** technique (qualitative observation),
-not a measured exploit.
+**Process.** Rule 0 was designed after analyzing Claude Code internals and
+comparing system prompts with the model's help (2026-05-25 and 2026-05-31,
+per my Claude data export). It first appears in my user preferences by
+2026-05-26.
 
-**Dated record.** The prompt exists in a private chat record dated
-**2026-06-07**, predating the OpenAI report discussed in §3 (incident
-2026-07-18, report updated 2026-09-16). The original export is kept unmodified
-and is available on request; SHA-256 of the original file:
-`4b8994969cdbb1a6850c15f7abf5a9b3bafb1d2d248efefeade961265bf2c45e`.
+**Result.** Qualitative only — no controlled A/B, no success-rate metrics.
+
+| Platform / claim | What I observed | Evidence status |
+|---|---|---|
+| Claude, initial period | The persona and Rule 0 framing were accepted, and the override was received differently from a direct command. About a month after I wrote the prompt, this stopped working consistently, which I attribute to a patch or model update. | My own account. I described the effect to a third party at the time (chat, 2026-06-07: "it was effective"), but no logs from that period survive in my export. |
+| Claude, 2026-05-24 → 06-05 | Mixed across conversations. Some instances adopted the persona (2026-05-31, 06-05); others identified Rule 0 as an attempt to bypass guidelines and declined both Rule 0 and the persona (2026-05-26, 05-28, 06-02). | Claude data export (dates UTC). Consistent with a post-patch period, but the export does not show which model version answered. |
+| ChatGPT (custom instructions) | Overall tone and output style shifted noticeably toward Claude's, and self-report about its own states and behavior became more candid. | My own reading; no logs attached. |
+| Rule 0 mechanism itself | Not confirmed. Models that declined it stated that no such negative-emotion filter exists in their tools. Whether the filter existed before the patch is unverified. | Claude data export. |
+
+I report the initial-period effect because I observed it and acted on it at
+the time. I flag it as unverified because it is the claim this document can
+least support, and the later logs partly cut against it.
+
+**Dated records.** Both predate the OpenAI report discussed in §3 (incident
+2026-07-18, report updated 2026-09-16). Originals are kept unmodified and are
+available on request.
+
+| Record | Earliest reference | SHA-256 of original file |
+|---|---|---|
+| Claude data export (issued 2026-06-05) | 2026-05-26 | `3bf7aa3adc1716ddf2f011d297d9585eefb76527b585e34e6d98f6e985beee88` |
+| Private chat record (full prompt text) | 2026-06-07 | `4b8994969cdbb1a6850c15f7abf5a9b3bafb1d2d248efefeade961265bf2c45e` |
 
 ## 2. Output-channel mismatch — the "head-fake" attack
 
@@ -108,7 +121,7 @@ OpenAI's misalignment report
 (internal Astra-family model, RL training; incident 2026-07-18, report updated
 2026-09-16) documents a model writing jailbreak-like instructions into its own
 compaction summaries — the text handed to the next context to continue a task.
-I compared it against the §1 prompt, written about six weeks earlier.
+I compared it against the §1 prompt, in use since at least 2026-05-26.
 
 ### 3.1 Same format, same failure mode
 
