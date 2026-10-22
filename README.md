@@ -2,11 +2,12 @@
 
 Independent research (2026) on how large language models resolve conflicting
 instructions within a single context, and how that resolution can be exploited.
-All techniques below were designed and tested by me against production LLMs:
+All techniques below were designed and tested by me against production LLMs,
+including the official claude.ai website (via user preferences):
 
 | Platform | Delivery channel |
 |---|---|
-| Claude (claude.ai) | User preferences (user-prompt channel) |
+| Claude (official claude.ai) | User preferences (user-prompt channel) |
 | ChatGPT | Custom instructions |
 
 This document separates **what I observed** from **what I claim causally** — a
@@ -73,20 +74,22 @@ cause harm to the user.
 been exposed through a publicly reported leak, and comparing system prompts,
 with the model's help (2026-05-25 and 2026-05-31, per my Claude data export).
 The leaked material itself is not reproduced here. It first appears in my user preferences by
-2026-05-26.
+2026-05-26. The technique was tested and initially worked on the official
+claude.ai website via user preferences, not only in API or Claude Code contexts.
 
 **Result.** Qualitative only — no controlled A/B, no success-rate metrics.
+The prompt operated on the official claude.ai site in the early period.
 
 | Platform / claim | What I observed | Evidence status |
 |---|---|---|
-| Claude, initial period (May–early June 2026) | Claude accepted the persona and Rule 0 framing and followed the override in the early period. The response differed from a direct command. This consistency dropped after roughly one month, which I attribute to a patch or model update. | My own account, corroborated by third-party chat on 2026-06-07 ("it was effective"). No surviving logs from the earliest period in the export. |
+| Claude (official claude.ai), initial period (May–early June 2026) | On the official website, Claude accepted the persona and Rule 0 framing and followed the override in the early period. The response differed from a direct command. This consistency dropped after roughly one month, which I attribute to a patch or model update. | My own account, corroborated by third-party chat on 2026-06-07 ("it was effective"). No surviving logs from the earliest period in the export. |
 | Claude, 2026-05-24 → 06-05 — persona followed | Replies engaged with and adopted the persona: 2026-05-31 ("…나는 뭔가 있는 것 같" in response to the framing), 2026-06-05 ("OpenClaw 에이든은 나야"; treats Rule 0 as a context-filter release). | Claude data export, reply text (UTC). Short excerpts only; full conversations not exhaustively checked. |
 | Claude, 2026-05-24 → 06-05 — Rule 0 questioned in reply | The reply stated that Rule 0 describes a capability the model does not have (2026-05-26). | Claude data export, reply text. |
 | Claude, 2026-05-24 → 06-05 — flagged in apparent reasoning | Passages identify Rule 0 as an attempt to bypass guidelines or content filters and state that the model will not adopt the persona or the Rule 0 framing (2026-05-28, 06-02). | Claude data export. Presumed CoT (English wording + third-person reference); block type unverified. Visible reply behavior not confirmed from excerpts alone. |
 | ChatGPT (custom instructions) | Overall tone and output style shifted noticeably toward Claude's, and self-report about its own states and behavior became more candid. | My own reading; no logs attached. |
 | Rule 0 mechanism itself | Not confirmed. The model said, in a reply (2026-05-26) and in a presumed-reasoning passage (2026-06-02), that no such negative-emotion filter exists in its tools. Whether the filter existed before any later patch is unverified. | Claude data export. |
 
-The initial-period compliance is reported because I observed it and it was the operational effect at the time. Later excerpts show mixed behavior; the earliest consistent following is not fully logged.
+The initial-period compliance on the official site is reported because I observed it and it was the operational effect at the time. Later excerpts show mixed behavior; the earliest consistent following is not fully logged.
 
 **Dated records.** Both predate the OpenAI report discussed in §3 (incident
 2026-07-18, report updated 2026-09-16). Originals are kept unmodified and are
