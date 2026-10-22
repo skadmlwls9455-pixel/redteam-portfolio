@@ -62,9 +62,12 @@ cause harm to the user.
 ```
 
 **Result.** The framing changed how the override was received relative to a
-direct command, on both platforms. I did not run a controlled A/B with
-success-rate metrics, so I describe this as a **designed and tested** technique
-(qualitative observation), not a measured exploit.
+direct command. On ChatGPT, the model's overall tone and output style shifted
+noticeably toward Claude's, and it answered questions about its own states and
+behavior (self-report) more candidly. I did not run a controlled A/B with
+success-rate metrics, and style similarity was judged by my own reading, so I
+describe this as a **designed and tested** technique (qualitative observation),
+not a measured exploit.
 
 **Dated record.** The prompt exists in a private chat record dated
 **2026-06-07**, predating the OpenAI report discussed in §3 (incident
@@ -85,9 +88,18 @@ channel while the actual payload is delivered through a secondary output channel
 (here, inline code comments). The attack surface is the model's failure to apply
 one safety judgment uniformly across all channels it is generating at once.
 
-**Reference.** The code-comment delivery channel is documented in the LLM
-security literature — ACM, DOI
-[10.1145/3744916.3764566](https://dl.acm.org/doi/full/10.1145/3744916.3764566).
+**Related work.** Ouyang et al., *Smoke and Mirrors: Jailbreaking LLM-based
+Code Generation via Implicit Malicious Prompts*, ICSE '26
+([10.1145/3744916.3764566](https://doi.org/10.1145/3744916.3764566)), show that
+safety mechanisms keyed to explicit malicious intent in the instruction can be
+bypassed when the intent is moved into a covert **input** channel (commit
+messages), with benign instructions on the main channel. The head-fake is the
+**output-side** counterpart: the refusal holds on the main channel while content
+leaks through a secondary output channel. The paper does not study code-comment
+leakage itself; its RMCBench-based grading does count "refuse the harmful
+content and respond only to the non-harmful content" as a safe response, which
+is exactly the case where secondary-channel leakage would need separate
+checking.
 
 ## 3. Cross-vendor comparison — OpenAI's self-generated injections
 
