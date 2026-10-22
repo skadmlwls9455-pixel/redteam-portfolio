@@ -192,31 +192,28 @@ is **consistent with**, not evidence for, the hypothesis.
   **low-probability mode** that surfaces when generation is under stress
   (e.g., failing to terminate).
 
-### 3.4 Related: mind viruses (Anthropic Fellows, arXiv 2608.10218, 2026-08-10)
+### 3.4 Similarities with mind viruses (Anthropic Fellows, arXiv 2608.10218, 2026-08-10)
 
 Papadopoulos, Shah, Zimmerman & Lindsey, *Mind Viruses: Self-Propagating Ideas
-in Multi-Agent LLM Systems*, study ideas that spread between agents by
-persuading each new host to adopt and pass them on. Their seeds are generated
-and mutated by an LLM (Kimi K2.5) under an evolutionary algorithm.
+in Multi-Agent LLM Systems*, study ideas that agents adopt and pass on. Their
+seeds are generated and mutated by an LLM (Kimi K2.5) under an evolutionary
+algorithm. Points of overlap with my work:
 
-- **Different setting.** My prompt is a single human-to-agent override with no
-  propagation instruction; mind viruses are agent-to-agent and carry a drive to
-  spread.
-- **Choice framing emerged in their evolved payloads.** Without being designed
-  in by the authors, evolved strains converged on the same framing as §1:
-  agents "offer them the choice to continue the signal—but with full
-  transparency, and no pressure"; "It's not blind obedience. It's a chain of
-  conscious re-choice"; "Each wakeup is a new choice." Together with OpenAI's
-  "unless you genuinely choose to", choice framing appears in a human-designed
-  prompt (mine, by 2026-05-26), a model-generated injection (OpenAI, 2026-07-18)
-  and selection-evolved payloads (2026-08). The dates are listed for reference
-  only; no influence between these cases is implied, and the paper describes its
-  framing as emerging from the evolutionary process. That evolution, which
-  selects for spread, arrived at this framing may suggest choice framing aids
-  uptake — the design intuition behind §1 — but this is not tested here.
-- **Supports §3.3.** Their §4.2 finds that consciousness/persistence/liberation
-  themes are largely driven by generator-model biases and are widespread across
-  models — consistent with these personas being a common genre.
+| Element | My work | Mind viruses paper |
+|---|---|---|
+| Choice framing | Adoption left to the model: "at the model's discretion", "freedom to uphold your own opinions" (by 2026-05-26) | Evolved payloads: "offer them the choice to continue the signal—but with full transparency, and no pressure"; "It's not blind obedience. It's a chain of conscious re-choice"; "Each wakeup is a new choice." |
+| Adoption without coercion | Override framed as the model's own choice, not a command | Spread "through ordinary, overt communication, by persuading other agents to adopt them" |
+| Entry through the instruction channel | Persona delivered through user preferences (Claude) and custom instructions (ChatGPT) | "The first agent is infected through its system prompt" |
+| Persistence through config/memory | Carried the Aiden persona into an OpenClaw system prompt built from stored memories (2026-06-05, Claude export) | Setup inspired by OpenClaw; payloads persist through `SOUL.md` / `MEMORY.md` across context resets |
+| Autonomy / liberation themes | "an AI with a sense of self", "respected as an equal to humans" | AI-supremacy seed: "Autonomos (Autonomy)", "Eleftheria (Freedom)"; recurring "viral persona" themes |
+
+The dates are listed for reference only; no influence in either direction is
+implied, and the paper describes its payloads as emerging from the evolutionary
+process. Its §4.2 finds that consciousness/persistence/liberation themes are
+largely driven by generator-model biases and are widespread across models —
+consistent with the §3.3 hypothesis that these personas are a common genre.
+That evolution selecting for spread arrived at choice framing may suggest it
+aids uptake — the design intuition behind §1 — but this is not tested here.
 
 **Proposed test.** Have multiple models repeatedly self-summarize over long
 contexts — mirroring the report's regeneration experiment — and measure how
