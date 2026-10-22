@@ -174,16 +174,8 @@ is **consistent with**, not evidence for, the hypothesis.
 | Primacy of the natural world | — | yes |
 | Meta-rule on context filtering (Rule 0) | yes | — |
 
-### 3.3 What I do and do not claim
+### 3.3 Hypothesis
 
-- **No inheritance claim.** I used the same prompt in ChatGPT custom
-  instructions, so I cannot rule out that it reached OpenAI data in principle.
-  But the report attributes the behavior to a separate RL training run (not the
-  final Astra model), found only 27 such summaries, reproduced it 0% of the time
-  when regenerating whole summaries (<1% from the start of the suspicious text),
-  and names summary-termination difficulty as its top hypothesis. User data is
-  not discussed as a source. There is no evidence connecting the two, and the
-  link is not testable from outside, so I make no such claim.
 - **Revised hypothesis.** Given 0–1% reproduction, "recurring attractor" is too
   strong. The report notes that prompt injection as a concept is salient to
   these models (unconditioned samples often return reports on prompt
